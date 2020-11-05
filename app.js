@@ -4,10 +4,10 @@ window.addEventListener('load', ()=>{
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position =>{
             long= position.coords.longitude;
-            lat= position.corrds.latitude;
+            lat= position.coords.latitude;
             
-            //const proxy = 'https://cos-anywhere.herokuapp.com/'
-            const api=`https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
+            const proxy = 'https://cors-anywhere.herokuapp.com/'
+            const api=`${proxy}https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
 
             fetch(api)
             .then(response=>{
